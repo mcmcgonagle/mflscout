@@ -1,6 +1,8 @@
 import requests
 import time
+import streamlit as st
 
+@st.cache_data(ttl=1800)
 def get_match(id):
     try:
         #print(id)
@@ -22,8 +24,8 @@ def get_match(id):
             }
         }
         #print(match)
-        time.sleep(0.5)
         return match
     except:
         print('error for match')
+        
 
